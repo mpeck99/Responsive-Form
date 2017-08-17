@@ -1,11 +1,6 @@
 html, body {
   height: 100%; }
 
-aside img {
-  width: 100%;
-  height: 500px;
-  margin-left: 0px; }
-
 #content {
   display: flex;
   margin: 0px;
@@ -19,7 +14,7 @@ aside img {
   width: 33%; }
 
 #product img {
-  width: 100%; }
+  width: 75%; }
 
 #price {
   display: flex;
@@ -53,7 +48,7 @@ input[type="radio"] {
   background-color: #41337A; }
 
 .shirtSize {
-  padding: 20px 60px;
+  padding: 20px 40px;
   margin: 10px;
   border-radius: 5px;
   background-color: #F4F4F4;
