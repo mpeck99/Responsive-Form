@@ -1,0 +1,6 @@
+@mixin orderLayout($wid, $fontFam, $fontS)
+{
+    width: $wid;
+    font-family: $fontFam;
+    font-size: $fontS;
+}

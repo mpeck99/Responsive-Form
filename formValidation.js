@@ -4,8 +4,8 @@ const name=document.querySelector('#fullName');
 const emailInput=document.querySelector('#emailAddress');
 const address=document.querySelector('#address1');
 const city=document.querySelector('#cityInput');
-const zipInput=document.querySelector('#zip');
-const st=document.querySelector('#stateList');
+const zipInput=document.querySelector('#zipCode');
+const state=document.querySelector('#stateList');
 const country=document.querySelector('#country');
 
 class CheckValidity
@@ -26,11 +26,11 @@ class CheckValidity
         var fullName=name.value;
         var emailAddress=emailInput.value;
         var pAddress=address.value;
+        var z=zipInput.value;
         if(fullName=='' || pAddress=='')
         {
-            this.addError('Please do not leave any inputs blank.')
+            this.addError('Please do not leave any fields blank.')
         }
-        
         if(status.typeMismatch)
         {
             this.addError('Entry does not match the field type.');
@@ -85,12 +85,20 @@ function updateInfo()
 {
     
         const shipName=document.querySelector('#shippingName');
-        const shipAdd=document.querySelector('#primaryAddress');
+        const shipAdd=document.querySelector('#mainAddress');
+        const cityInfo=document.querySelector('#cityUpdate')
+        const zipData=document.querySelector('#zipUpdate');
+        cityInfo.innerHTML=city.value;    
+        zipData.innerHTML=zipInput.value;
         shipName.innerHTML=name.value;
-        shipAdd.innerHTML=address1.value;
-        console.log('this works, kinda')
+        shipAdd.innerHTML=address.value;  
 }
-
-
+function stateSelect()
+{
+    const st=state.options[state.selectedIndex].value; 
+    const stateInfo=document.querySelector('#stateUpdate');   
+    stateInfo.innerHTML=st;
+}
+state.addEventListener('change', stateSelect, false)
 
 
