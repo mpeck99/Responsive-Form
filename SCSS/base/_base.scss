@@ -81,11 +81,19 @@ input[type="radio"]
 border-color: #596869;
 border-width: 3px;
 border-style: solid;
+margin-top: 10px;
+}
+#shirtSizeButtons p
+{
+    margin: 50px 10px;
 }
 p
 {
-
     font-size: 24px;
+}
+#shirtColorButtons p
+{
+    margin: 50px 10px;
 }
 #shippingDetails
 {
@@ -107,9 +115,13 @@ p
     height: 50px;
     
 }
+#shippingDetails input[type="number"]
+{
+    height: 50px
+}
 #shippingDetails input[type="email"]
 {
-        height: 50px;
+    height: 50px;
 }
 #shippingDetails label
 {
@@ -117,6 +129,7 @@ p
     font-weight: bold;
     color: #596869;
 }
+
 select
 {
     width: 100%;
@@ -147,4 +160,17 @@ input[type="radio"]:checked+label
 {
 background-color: #596869;
 color: #E5E5E5;
+}
+.error
+{
+    color: red;
+}
+#submitButton button
+{
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+    padding: 10px;
+    display: block;
+    align-items: center;
 }

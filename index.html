@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content= "width=device-width, initial-scale=1.0">
     <title>Responsive Form</title>     
-    <link rel=stylesheet href='CSS/main.css'/>            
+    <link rel=stylesheet href='CSS/main.css'/>      
+
 </head>
 <body>   
     <header role="banner">
@@ -32,22 +33,21 @@
         </section>
         <section id="shippingDetails">
             <h1>Shipping Details</h1>
-
-            <form>
+            <form id="shippingForm">
                 <label>Full Name</label><br>
                 <input type="text" id="fullName" aria-label="full name" required/><br>
                 <label>Email</label><br>                
                 <input type="email" id="emailAddress" aria-label="email" required/><br>
                 <label id="addressLabel">Address</label><br>
-                <input type="text"  aria-label="primary address" id="address"1 required/><br>
+                <input type="text"  aria-label="primary address" id="address1" required/><br>
                 <label id="address2Label">Address 2</label><br>
                 <input type="text" id="address2" aria-label="secondary address"/><br>
                 <label id="city" aria-label="City">City</label>
-                <input type="text" aria-label="city" required/><br>
-                <label id="zip" aria-label="zipcode">Zip</label>
-                <input type="text" aria-label="zipcode" required/>
+                <input type="text" aria-label="city" id="cityInput" required/><br>
+                <label aria-label="zipcode">Zip</label>
+                <input type="number" aria-label="zipcode" id="zipCode" required/>
                 <label>State</label><br>
-                <select name="state" id="state" aria-label="states" required>
+                <select name="state" id="stateList" aria-label="states" required>
                         <option value="" selected="selected">Select a State</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -344,20 +344,27 @@
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
                         </select>
-            </form>
+                    
+        </form>
         </section>
         <aside id=orderSummary>
         <h1>Order Summary</h1>
-        <h2>iPhone Case</h2>
+        <h3>Game of Thrones T-Shirt</h3>
         <p>$25.00</p>
-        <h3>Shipping</h3>
-        <p>FREE</p>
-        <h3 id="total">Total</h3>
-        <p>$25.00</p>
+        <h3>Shipping</h3><p>FREE</p>      
+        <h3 id="total">Total</h3><p>$25.00</p>
+        <h4>Shipping Address</h4>
+        <p id="shippingName"></p>
+        <p id="primaryAddress"></p>
+        <p id="city_st_country_zip"></p>
+        <form id="submitButton">
+            <button type="submit">Complete Order</button> 
+        </form>
         </aside>
     </div>
     <footer id="footer">
 
     </footer>
+    <script src="formValidation.js"></script>
 </body>
 </html>
