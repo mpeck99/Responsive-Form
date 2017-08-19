@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Montserrat");
+* {
+  box-sizing: border-box; }
+
 html, body {
   height: 100%; }
 
@@ -31,8 +34,7 @@ h1, h2, h3, h4, label, select {
   float: left;
   flex-direction: column;
   margin: 0px;
-  width: 33%;
-  background-color: 009081; }
+  width: 33%; }
 
 #product img {
   width: 75%; }
@@ -162,3 +164,27 @@ button[type="submit"] {
 select {
   display: flex;
   width: 100%; }
+
+@media (min-width: 320px) and (max-width: 425px) {
+  html, body {
+    display: block; }
+  #content {
+    flex-direction: column; }
+  #product, #shippingDetails, #orderSummary {
+    width: 100%; }
+  h2 {
+    font-size: 22px; }
+  #product {
+    margin-bottom: 20px; }
+  #shippingDetails {
+    margin-top: 10px; }
+  #shirtSizeButtons input[type="radio"] + label {
+    font-size: 16px;
+    padding: 30px;
+    margin: 10px; }
+  #shirtColorButtons input[type="radio"] + label {
+    padding: 20px;
+    margin: 10px; }
+  select:hover {
+    border: solid;
+    cursor: pointer; } }
