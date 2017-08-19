@@ -218,6 +218,9 @@ select
     font-size: 24px;  
     font-weight: bolder;
 }
+
+//button styling
+
 #submitButton button
 {
     width: 200px;
@@ -225,7 +228,7 @@ select
     text-align: center;
     padding: 10px;
     display: block;
-    align-items: center;
+  
 }
 
 button[type="submit"]
@@ -235,7 +238,6 @@ button[type="submit"]
     font-family: $paragraphFont;
     justify-content: center;
 }
-
 select 
 {
     display: flex;
@@ -276,11 +278,16 @@ select
          margin-top: 10px;
     }
 
+    #shippingDetails input[type="text"], select
+    {
+        width: 275px;
+    }
     #shirtSizeButtons input[type="radio"]+label
     {
+        border: solid;
         font-size: 16px;
         padding: 30px;
-        margin: 10px;
+        margin: 5px;
     }
 
     #shirtColorButtons input[type="radio"]+label
@@ -289,15 +296,12 @@ select
         margin: 10px;
     }
 
-    select
-    {
-        border: solid;
-    }
+  
 }
 
 //tablet size styling
 
-@media (max-width: 768px)
+@media (min-width: 426px) and (max-width: 768px) 
 {
     html, body
     {
@@ -323,6 +327,10 @@ select
     {
         margin-top: 30px;
     }
+    #shippingDetails input, select
+    {
+        width: 700px;
+    }
 }
 
 //desktop size styling
@@ -332,15 +340,15 @@ select
     #shirtSizeButtons input[type="radio"]+label
     {
         font-size: 16px;
-        padding: 30px;
+        padding: 25px;
         margin: 10px;
 
     }
 
     #shirtColorButtons input[type="radio"]+label
     {
-        padding: 20px;
-        margin: 10px;
+        padding: 25px;
+        margin: 0px;
 
     }
 }    

@@ -154,8 +154,7 @@ select {
   margin: 10px auto;
   text-align: center;
   padding: 10px;
-  display: block;
-  align-items: center; }
+  display: block; }
 
 button[type="submit"] {
   font-size: 20px;
@@ -179,17 +178,18 @@ select {
     margin-bottom: 20px; }
   #shippingDetails {
     margin-top: 10px; }
+  #shippingDetails input[type="text"], select {
+    width: 275px; }
   #shirtSizeButtons input[type="radio"] + label {
+    border: solid;
     font-size: 16px;
     padding: 30px;
-    margin: 10px; }
+    margin: 5px; }
   #shirtColorButtons input[type="radio"] + label {
     padding: 20px;
-    margin: 10px; }
-  select {
-    border: solid; } }
+    margin: 10px; } }
 
-@media (max-width: 768px) {
+@media (min-width: 426px) and (max-width: 768px) {
   html, body {
     display: block; }
   #content {
@@ -199,13 +199,15 @@ select {
   #product {
     align-items: flex-start; }
   #shippingDetails {
-    margin-top: 30px; } }
+    margin-top: 30px; }
+  #shippingDetails input, select {
+    width: 700px; } }
 
 @media (max-width: 1024px) {
   #shirtSizeButtons input[type="radio"] + label {
     font-size: 16px;
-    padding: 30px;
+    padding: 25px;
     margin: 10px; }
   #shirtColorButtons input[type="radio"] + label {
-    padding: 20px;
-    margin: 10px; } }
+    padding: 25px;
+    margin: 0px; } }
