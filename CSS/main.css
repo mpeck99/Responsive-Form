@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Montserrat");
-* {
-  box-sizing: border-box; }
-
 html, body {
   height: 100%; }
 
 h1, h2, h3, h4, label, select {
   font-family: "Montserrat", sans-serif;
+  color: #005B5B; }
+
+p {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
   color: #005B5B; }
 
 #productTitlePrice, #shippingCost, #totalCost {
@@ -34,16 +36,14 @@ h1, h2, h3, h4, label, select {
   float: left;
   flex-direction: column;
   margin: 0px;
-  width: 33%; }
+  width: 33%;
+  align-items: center; }
 
 #product img {
   width: 75%; }
 
-#price {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px;
-  font-weight: bold; }
+#product h2 {
+  align-self: flex-end; }
 
 input[type="radio"] {
   -webkit-appearance: button;
@@ -52,14 +52,23 @@ input[type="radio"] {
   /* Firefox */
   -ms-appearance: button; }
 
+input[type="radio"]:checked + label {
+  background-color: #005B5B;
+  color: #E5E5E5; }
+
+#shirtColorButtons input[type="radio"]:checked + label {
+  border-color: #007979;
+  border-width: 5px;
+  border-style: solid;
+  margin-top: 10px; }
+
 #blueLabel, #redLabel, #blackLabel, #purpleLabel {
   background-color: #42dcf4;
   margin: 10px 10px;
   border-radius: 5px;
   font-size: 24px;
-  padding: 10px;
   color: transparent;
-  padding: 25px 40px; }
+  padding: 25px 35px; }
 
 #redLabel {
   background-color: #f44242; }
@@ -77,22 +86,17 @@ input[type="radio"] {
   color: #fff;
   width: 50%; }
 
-#shirtColorButtons input[type="radio"]:checked + label {
-  border-color: #007979;
-  border-width: 5px;
-  border-style: solid;
-  margin-top: 10px; }
-
 #shirtSizeButtons p {
   margin: 50px 10px; }
 
-p {
-  font-family: "Lato", sans-serif;
-  font-size: 24px;
-  color: #005B5B; }
-
 #shirtColorButtons p {
   margin: 50px 10px; }
+
+#price {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  font-weight: bold; }
 
 #shippingDetails {
   float: left;
@@ -140,13 +144,10 @@ select {
   clear: both;
   float: left; }
 
-input[type="radio"]:checked + label {
-  background-color: #005B5B;
-  color: #E5E5E5; }
-
 .error {
   color: red;
-  font-size: 16px; }
+  font-size: 24px;
+  font-weight: bolder; }
 
 #submitButton button {
   width: 200px;
@@ -181,15 +182,30 @@ select {
   #shirtSizeButtons input[type="radio"] + label {
     font-size: 16px;
     padding: 30px;
-    margin: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; }
+    margin: 10px; }
   #shirtColorButtons input[type="radio"] + label {
     padding: 20px;
-    margin: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; }
+    margin: 10px; }
   select {
     border: solid; } }
+
+@media (max-width: 768px) {
+  html, body {
+    display: block; }
+  #content {
+    flex-direction: column; }
+  #product, #shippingDetails, #orderSummary {
+    width: 100%; }
+  #product {
+    align-items: flex-start; }
+  #shippingDetails {
+    margin-top: 30px; } }
+
+@media (max-width: 1024px) {
+  #shirtSizeButtons input[type="radio"] + label {
+    font-size: 16px;
+    padding: 30px;
+    margin: 10px; }
+  #shirtColorButtons input[type="radio"] + label {
+    padding: 20px;
+    margin: 10px; } }

@@ -43,7 +43,10 @@ class CheckValidity
         {
             this.addError('Entry is to short.');
         }
-
+        else
+        {
+            
+        }
         return this.errors;
     }
 }

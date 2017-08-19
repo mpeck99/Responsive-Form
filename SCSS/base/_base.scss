@@ -2,12 +2,7 @@
 @import 'utils/mixins';
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
 
-  
-*
-{
-    box-sizing: border-box;
-    
-}
+//generic styling
 html, body
 {
     height:100%;
@@ -17,6 +12,13 @@ h1,h2,h3,h4,label,select
     font-family: $titleFont;
     color: #005B5B;
 }
+p
+{
+    font-family: $paragraphFont;
+    font-size: 24px;
+    color: #005B5B;
+}
+//product styling
 #productTitlePrice, #shippingCost, #totalCost
 {
     display: flex;
@@ -49,28 +51,39 @@ h1,h2,h3,h4,label,select
     flex-direction: column;
     margin: 0px;
     width: 33%;
-   
+    align-items: center;
     
 }
+
 #product img
 {
     width: 75%;
-  
-
 }
 
-#price
+#product h2
 {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-    font-weight: bold;
+   align-self: flex-end;
 }
+//Radio Buttons
 input[type="radio"]
 {
     -webkit-appearance: button; /* Chrome, Safari, Opera */
     -moz-appearance: button;    /* Firefox */
     -ms-appearance: button;  
+}
+
+input[type="radio"]:checked+label
+{
+    background-color:  #005B5B;
+    color: #E5E5E5;
+}
+
+#shirtColorButtons input[type="radio"]:checked+label
+{
+    border-color: #007979;
+    border-width: 5px;
+    border-style: solid;
+    margin-top: 10px;
 }
 
 #blueLabel
@@ -79,24 +92,21 @@ input[type="radio"]
     margin: 10px 10px;
     border-radius:$buttonBorderRadius;
     font-size: 24px;
-    padding: 10px;
     color: transparent;  
-    padding: 25px 40px;
-
-
+    padding: 25px 35px;
 }
-
 #redLabel
-{
-  
+{  
     @extend #blueLabel;
     background-color: $redButton;
 }
+
 #blackLabel
 {
     @extend #blueLabel;
     background-color: $blackButton;
 }
+
 #purpleLabel
 {
     @extend #blueLabel;
@@ -109,39 +119,37 @@ input[type="radio"]
     border-radius: $buttonBorderRadius;
     background-color: #007979;
     color: #fff;  
-    width: 50%;
-    
+    width: 50%;    
 }
-#shirtColorButtons input[type="radio"]:checked+label
-{
-border-color: #007979;
-border-width: 5px;
-border-style: solid;
-margin-top: 10px;
-}
+
 #shirtSizeButtons p
 {
     margin: 50px 10px;
 }
-p
-{
-    font-family: $paragraphFont;
-    font-size: 24px;
-    color: #005B5B;
-}
+
 #shirtColorButtons p
 {
     margin: 50px 10px;
 }
+
+//shipping details information
+
+#price
+{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    font-weight: bold;
+}
+
 #shippingDetails
 {
     float: left;
     width: 33%;    
     background-color: #F9F9F9;
     padding: 20px;
-
-
 }
+
 #shippingDetails input
 {
     display: flex;
@@ -149,22 +157,23 @@ p
     height: auto;
     justify-content: center;
     font-size: 20px;
-
-
 }
+
 #shippingDetails input[type="text"]
 {
-    height: 50px;
-    
+    height: 50px;  
 }
+
 #shippingDetails input[type="number"]
 {
     height: 50px
 }
+
 #shippingDetails input[type="email"]
 {
     height: 50px;
 }
+
 #shippingDetails label
 {
     font-size: 20px;
@@ -178,36 +187,36 @@ select
     height: 50px;
     margin-top: 10px;
 }
+
+//Ordersummary styling
+
 #orderSummary
 {  
     float: right;
     width: 33%;
     background-color: #E5E5E5;
     padding: 8px;
-
-
 }
+
 #orderSummary p
 {
     clear: both;
     float: right;
-
 }
+
 #orderSummary  h2, h3
 {
     clear: both;
     float: left;
 }
-input[type="radio"]:checked+label
-{
-background-color:  #005B5B;
-color: #E5E5E5;
-}
+
+//error message styling
+
 .error
 {
     color: red;
-    font-size: 16px;  
-
+    font-size: 24px;  
+    font-weight: bolder;
 }
 #submitButton button
 {
@@ -218,6 +227,7 @@ color: #E5E5E5;
     display: block;
     align-items: center;
 }
+
 button[type="submit"]
 {
     @extend .shirtSize;
@@ -225,64 +235,112 @@ button[type="submit"]
     font-family: $paragraphFont;
     justify-content: center;
 }
+
 select 
 {
     display: flex;
     width: 100%;
 }
+
+//mobile size styling
+
 @media(min-width: 320px) and (max-width: 425px)
 {
-    
     html, body
     {
         display: block; 
-        
     }
+
     #content
     {
         flex-direction: column;
     }
+
     #product, #shippingDetails, #orderSummary
     {
-        width: 100%;
-       
+        width: 100%;   
     }
+
     h2
     {
         font-size: 22px;
-
     }
+
     #product
     {
         margin-bottom: 20px;
     }
+
     #shippingDetails
     {
          margin-top: 10px;
     }
+
     #shirtSizeButtons input[type="radio"]+label
     {
         font-size: 16px;
         padding: 30px;
         margin: 10px;
-        -webkit-appearance: none; 
-        -moz-appearance: none;
-        appearance: none; 
     }
+
     #shirtColorButtons input[type="radio"]+label
     {
         padding: 20px;
         margin: 10px;
-        -webkit-appearance: none; 
-        -moz-appearance: none;
-        appearance: none; 
     }
+
     select
     {
         border: solid;
+    }
+}
+
+//tablet size styling
+
+@media (max-width: 768px)
+{
+    html, body
+    {
+        display: block; 
+    }
+
+    #content
+    {
+        flex-direction: column;
+    }
+
+    #product, #shippingDetails, #orderSummary
+    {
+        width: 100%;   
+    }
+
+    #product
+    {
+        align-items: flex-start;
+    }
+
+    #shippingDetails    
+    {
+        margin-top: 30px;
+    }
+}
+
+//desktop size styling
+
+@media(max-width: 1024px)
+{
+    #shirtSizeButtons input[type="radio"]+label
+    {
+        font-size: 16px;
+        padding: 30px;
+        margin: 10px;
 
     }
 
-}
+    #shirtColorButtons input[type="radio"]+label
+    {
+        padding: 20px;
+        margin: 10px;
 
-    
+    }
+}    
