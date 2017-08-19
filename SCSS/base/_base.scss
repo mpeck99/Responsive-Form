@@ -265,17 +265,22 @@ select
         font-size: 16px;
         padding: 30px;
         margin: 10px;
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none; 
     }
     #shirtColorButtons input[type="radio"]+label
     {
         padding: 20px;
         margin: 10px;
-
+        -webkit-appearance: none; 
+        -moz-appearance: none;
+        appearance: none; 
     }
-    select:hover
+    select
     {
         border: solid;
-        cursor: pointer;
+
     }
 
 }
