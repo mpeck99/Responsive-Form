@@ -178,7 +178,7 @@ select {
     margin-bottom: 20px; }
   #shippingDetails {
     margin-top: 10px; }
-  #shippingDetails input[type="text"], select {
+  #shippingDetails input {
     width: 275px; }
   #shirtSizeButtons input[type="radio"] + label {
     border: solid;
