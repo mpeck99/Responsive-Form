@@ -27,7 +27,7 @@ class CheckValidity
         var emailAddress=emailInput.value;
         var pAddress=address.value;
         var z=zipInput.value;
-        if(fullName=='' || pAddress=='')
+        if(fullName=='' || pAddress=='' || z=='' || emailAddress=='')
         {
             this.addError('Please do not leave any fields blank.')
         }
@@ -35,7 +35,7 @@ class CheckValidity
         {
             this.addError('Entry does not match the field type.');
         }
-         if(status.tooLong)
+        if(status.tooLong)
         {
             this.addError('Entry is to long.');
         }
@@ -43,46 +43,50 @@ class CheckValidity
         {
             this.addError('Entry is to short.');
         }
-        else
+        if(this.input.value.match(/(^\d{5}(?:[\s]?[-\s][\s]?\d{4})?$)/))
         {
-            
+            this.addError('Enter a valid 5 to 9 digit zipcode.');
         }
         return this.errors;
     }
 }
+
 submit.addEventListener('click', (event)=>
 {
-event.preventDefault();
-let validateEmail= new CheckValidity(emailInput, "email");
-let validateName= new CheckValidity(name, "text");
-let errorMessages= validateEmail.getMessages();
-let nameErrors= validateName.getMessages();
-
-if(errorMessages.length>0)
-{
-    errorMessages.forEach( (err) =>
+    event.preventDefault();
+    let validateEmail= new CheckValidity(emailInput, "email");
+    let validateName= new CheckValidity(name, "text");
+    let errorMessages= validateEmail.getMessages();
+    let nameErrors= validateName.getMessages();
+    let validateZip=new CheckValidity(zipInput, "number");
+    let zipErros=validateZip.getMessages();
+    if(errorMessages.length>0 && zipErros.length>0&& nameErrors.length>0)
     {
-       const form=document.getElementById("shippingForm");
-       form.insertAdjacentHTML('afterend', '<p class="error">'+err+'</p>');
-    })
-}
-
-if(nameErrors.length>0)
-{    
-    nameErrors.forEach( (err) =>
-    {
-       const form=document.getElementById("shippingForm");
-       form.insertAdjacentHTML('afterend', '<p class="error">'+err+'</p>');
-    })
-}
-
-else
-{
-  
-    alert('form submitted');
-}
-
+        errorMessages.forEach( (err) =>
+        {
+            const form=document.getElementById("shippingForm");
+            form.insertAdjacentHTML('afterend', '<p class="error">'+err+'</p>');
+        }) 
+    }
+    else
+    {   
+    var replaceContent=document.getElementById("content");
+    var productDetails=document.querySelector("#productTitlePrice");
+    var shippingData=document.querySelector("#shippingCost");
+    var totalData=document.querySelector("#totalCost");
+    var addressData=document.querySelector("#shippingInformation");
+    replaceContent.className="completed";
+    replaceContent.innerHTML="<h1>Order Complete</h1>";
+    replaceContent.innerHTML+=productDetails.innerHTML;
+    replaceContent.innerHTML+=shippingData.innerHTML;
+    replaceContent.innerHTML+=totalData.innerHTML;
+    replaceContent.innerHTML+=addressData.innerHTML;
+    replaceContent.innerHTML+='<img src="../Assets/form-assets/circle-check.svg" alt="checkmark">'
+    console.log(addressData.innerHTML);
+    }
 });
+
+
 document.addEventListener('keydown', updateInfo,false);
 function updateInfo()
 {
@@ -95,6 +99,7 @@ function updateInfo()
         zipData.innerHTML=zipInput.value;
         shipName.innerHTML=name.value;
         shipAdd.innerHTML=address.value;  
+
 }
 function stateSelect()
 {
@@ -103,5 +108,15 @@ function stateSelect()
     stateInfo.innerHTML=st;
 }
 state.addEventListener('change', stateSelect, false)
+//focusing on the first radio buttons so that the keyboard can be easily used alone
+window.onload=function()
+{
+   var buttons=document.getElementById('shirtSizeButtons');
+   buttons.focus
+}
 
+function updateContent()
+{
 
+    
+}

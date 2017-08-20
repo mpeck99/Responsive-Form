@@ -27,9 +27,8 @@ p {
   font-size: 14px; }
 
 #content {
-  display: flex;
   margin: 0px;
-  min-height: 100%; }
+  height: 100%; }
 
 #product {
   display: flex;
@@ -138,7 +137,8 @@ select {
 
 #orderSummary {
   float: right;
-  width: 33%;
+  width: 30%;
+  min-height: 100%;
   background-color: #E5E5E5;
   padding: 8px; }
 
@@ -153,7 +153,27 @@ select {
 .error {
   color: red;
   font-size: 24px;
-  font-weight: bolder; }
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center; }
+
+.completed {
+  margin: 10px auto !important;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  background-color: #F9F9F9;
+  float: none; }
+  .completed h1 {
+    font-size: 32px; }
+  .completed img {
+    bottom: 15px;
+    position: fixed;
+    align-self: center; }
+  .completed P {
+    font-size: 18px;
+    align-self: flex-end; }
 
 #submitButton button {
   width: 200px;
@@ -179,13 +199,14 @@ select {
   #product, #shippingDetails, #orderSummary {
     width: 100%; }
   h2 {
-    font-size: 22px; }
+    font-size: 24px; }
   #product {
+    align-self: center;
     margin-bottom: 20px; }
   #shippingDetails {
     margin-top: 10px; }
   #shippingDetails input, #shippingDetails select {
-    width: 275px; }
+    width: 200px; }
   #shirtSizeButtons input[type="radio"] + label {
     border: solid;
     font-size: 16px;
@@ -193,7 +214,9 @@ select {
     margin: 5px; }
   #shirtColorButtons input[type="radio"] + label {
     padding: 20px;
-    margin: 10px; } }
+    margin: 10px; }
+  .error {
+    font-size: 18px; } }
 
 @media (min-width: 426px) and (max-width: 768px) {
   html, body {
@@ -209,7 +232,7 @@ select {
   #shippingDetails input, select {
     width: 675px; } }
 
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   #shirtSizeButtons input[type="radio"] + label {
     font-size: 16px;
     padding: 25px;
