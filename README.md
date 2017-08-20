@@ -1,0 +1,2 @@
+This project is displaying my knowlege of creating a responsive form. This form uses server-side validation to make sure that all of the required inputs and appropriate types are used. 
+You can view this site locally at https://mpeck99.github.io/Responsive-Form

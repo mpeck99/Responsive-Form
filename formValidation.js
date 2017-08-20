@@ -43,9 +43,9 @@ class CheckValidity
         {
             this.addError('Entry is to short.');
         }
-        if(this.input.value.match(/(^\d{5}(?:[\s]?[-\s][\s]?\d{4})?$)/))
+        if(zipInput.value.length !=5 && isNaN(zipInput.value))
         {
-            this.addError('Enter a valid 5 to 9 digit zipcode.');
+            this.addError('Enter a valid zipcode.');
         }
         return this.errors;
     }
@@ -58,16 +58,16 @@ submit.addEventListener('click', (event)=>
     let validateName= new CheckValidity(name, "text");
     let errorMessages= validateEmail.getMessages();
     let nameErrors= validateName.getMessages();
-    let validateZip=new CheckValidity(zipInput, "number");
+    let validateZip=new CheckValidity(zipInput, "zip");
     let zipErros=validateZip.getMessages();
-    if(errorMessages.length>0 && zipErros.length>0&& nameErrors.length>0)
+    const form=document.getElementById("shippingForm");
+    if(errorMessages.length>0&&zipErros.length>0)
     {
         errorMessages.forEach( (err) =>
         {
-            const form=document.getElementById("shippingForm");
             form.insertAdjacentHTML('afterend', '<p class="error">'+err+'</p>');
         }) 
-    }
+    } 
     else
     {   
     var replaceContent=document.getElementById("content");

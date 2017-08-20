@@ -22,8 +22,8 @@
             </div>
             <div id="shirtColorButtons">
                 <p>Select Color:</p>       
-                    <input type="radio" id="blue" name="color" checked aria-label="blue"/><label for="blue" id="blueLabel" value="blue"></label>
-                    <input type="radio" id="black" name="color" aria-label="black"/><label for="black" id="blackLabel"></label>  
+                    <input type="radio" id="black" name="color" checked aria-label="black"/><label for="black" id="blackLabel"></label>  
+                    <input type="radio" id="blue" name="color" aria-label="blue"/><label for="blue" id="blueLabel" value="blue"></label>   
                     <input type="radio" id="red" name="color" aria-label="red"/><label for="red" id="redLabel"></label> 
                     <input type="radio" id="purple" name="color" aria-label="purple"/><label for="purple" id="purpleLabel"></label>
             </div>
@@ -43,7 +43,7 @@
                 <label id="city" aria-label="City">City</label>
                     <input type="text" aria-label="city" id="cityInput" required/><br>
                 <label aria-label="zipcode">Zip</label>
-                    <input type="number" aria-label="zipcode" id="zipCode" required/>
+                    <input type="text" aria-label="zipcode" id="zipCode" pattern="\d{5}$c" required/>
                 <label>State</label><br>
                 <select name="state" id="stateList" aria-label="states" required>
                         <option value="" >Select a State</option>
@@ -341,11 +341,10 @@
                             <option value="Yugoslavia">Yugoslavia</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>
-                    
+                        </select>                 
         </form>
         </section>
-        <aside id="orderSummary">
+        <aside id="orderSummary" role="complementary">
             <h1>Order Summary</h1>
             <div id="productTitlePrice">
                 <h3>Game of Thrones T-Shirt</h3>
@@ -374,9 +373,7 @@
             <button type="submit">Complete Order</button> 
         </form>
         </aside>
-    </div>
-        
-    
+    </div>   
     <script src="formValidation.js"></script>
 </body>
 </html>

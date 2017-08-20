@@ -106,7 +106,6 @@ input[type="radio"]:checked + label {
 #shippingDetails input {
   display: flex;
   width: 100%;
-  height: auto;
   justify-content: center;
   font-size: 20px;
   border: solid;
@@ -114,25 +113,23 @@ input[type="radio"]:checked + label {
   border-radius: 5px; }
 
 #shippingDetails input[type="text"] {
-  height: 50px; }
-
-#shippingDetails input[type="number"] {
-  height: 50px; }
+  height: 40px; }
 
 #shippingDetails input[type="email"] {
-  height: 50px; }
+  height: 40px; }
 
 #shippingDetails label {
   font-size: 20px;
   font-weight: bold;
-  color: #596869; }
+  color: #007979;
+  margin-bottom: 10px; }
 
 select {
   border: solid;
   border-color: #007979;
   border-radius: 5px;
   width: 100%;
-  height: 50px;
+  height: 40px;
   margin-top: 10px; }
 
 #orderSummary {
@@ -152,7 +149,7 @@ select {
 
 .error {
   color: red;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bolder;
   font-style: italic;
   text-align: center; }
@@ -195,7 +192,9 @@ select {
   html, body {
     display: block; }
   #content {
-    flex-direction: column; }
+    flex-direction: column;
+    padding-left: 10px;
+    width: 100%; }
   #product, #shippingDetails, #orderSummary {
     width: 100%; }
   h2 {
@@ -206,23 +205,27 @@ select {
   #shippingDetails {
     margin-top: 10px; }
   #shippingDetails input, #shippingDetails select {
-    width: 200px; }
+    width: 85%; }
   #shirtSizeButtons input[type="radio"] + label {
     border: solid;
     font-size: 16px;
     padding: 30px;
     margin: 5px; }
   #shirtColorButtons input[type="radio"] + label {
-    padding: 20px;
+    padding: 18px;
     margin: 10px; }
   .error {
-    font-size: 18px; } }
+    display: flex;
+    font-size: 14px;
+    align-self: center; } }
 
 @media (min-width: 426px) and (max-width: 768px) {
   html, body {
     display: block; }
   #content {
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 10px;
+    width: 100%; }
   #product, #shippingDetails, #orderSummary {
     width: 100%; }
   #product {
@@ -230,13 +233,21 @@ select {
   #shippingDetails {
     margin-top: 30px; }
   #shippingDetails input, select {
-    width: 675px; } }
+    width: 85%; }
+  .error {
+    font-size: 24px; }
+  #product h2 {
+    margin-right: 75px; } }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1440px) {
   #shirtSizeButtons input[type="radio"] + label {
     font-size: 16px;
     padding: 25px;
     margin: 10px; }
+  #product, #shippingDetails, #orderSummary {
+    width: 100%; }
+  #shippingDetails input, select {
+    width: 950px; }
   #shirtColorButtons input[type="radio"] + label {
     padding: 25px;
     margin: 0px; } }
