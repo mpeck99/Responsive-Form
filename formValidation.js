@@ -81,7 +81,7 @@ submit.addEventListener('click', (event)=>
     replaceContent.innerHTML+=shippingData.innerHTML;
     replaceContent.innerHTML+=totalData.innerHTML;
     replaceContent.innerHTML+=addressData.innerHTML;
-    replaceContent.innerHTML+='<img src="../Assets/form-assets/circle-check.svg" alt="checkmark">'
+    replaceContent.innerHTML+='<img src="../Assets/form-assets/circle-check.svg" alt="checkmark">';
     console.log(addressData.innerHTML);
     }
 });
